@@ -26,3 +26,28 @@ var solution = [
     "675832941",
     "812945763"
 ]
+
+window.onload = function() {
+    setGame()
+}
+
+function setGame() {
+    // digits
+    for (let i = 1; i <= 9; i++) {
+        let number = document.createElement("div")
+        number.id = i
+        number.innerText = i
+        number.classList.add("number")
+        document.getElementById("digits").appendChild(number)
+    }
+
+    // board
+    for (let r = 0; r < 9; r++){
+        for (let c = 0; c < 9; c++){
+            let tile = document.createElement("div")
+            tile.id = r.toString() + "-" + c.toString()
+            tile.classList.add("tile")
+            document.getElementById("board").append(tile)
+        }
+    }
+}
